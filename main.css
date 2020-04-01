@@ -1,14 +1,93 @@
+:root {
+    --main-padding:5vw 5vw; 
+    --main-bg-color:rgba(0,0,0,0.95);
+  }
+  
+*{
+    box-sizing: border-box;
+}
+
+a:link, a:hover, a:visited, a:active{
+    color:white;
+}
+
+a:hover, a:active{
+    text-decoration:none;
+}
+
 body{
     background:black;
     overflow: hidden;
+    font-family: neue-haas-grotesk-display, sans-serif; 
+    font-weight:400;
+    color:white;
+    font-size: 21px;
+    line-height: 1.6em;
+    letter-spacing: 0.3px;
 }
 
 main{
     display: block;
     position: absolute;
+    overflow-y:scroll;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.8);
+    
+}
+
+header.main{  
+    margin-top:40vw;
+    width:100%;
+}
+
+header.main, article{
+    padding: var(--main-padding);
+    background: var(--main-bg-color);
+}
+
+header.main h1{
+    font-weight:500;
+    text-transform: uppercase;
+    font-size:42px;
+}
+
+
+
+article header h1{
+    font-weight:500;
+    text-transform: uppercase;
+    font-size:42px;
+    letter-spacing: 3px;
+    line-height: 1.2em;
+    margin:0;
+    background:white;
+    color:black;
+    padding-left:4px;
+}
+
+article header h2{
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:1px;
+    margin:0 0 40px;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+
+.video-wrapper{
+    position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+}
+
+.video-wrapper iframe, .video-wrapper object, .video-wrapper embed {
+    position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
 }
