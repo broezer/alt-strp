@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="./main.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
 		<link rel="stylesheet" href="https://use.typekit.net/mpn4vch.css">
 
 
@@ -17,13 +18,20 @@
 	<body>
 		<main>
 			<header class="main">
+
+				<div class="ready-player-1 player">
+					<audio crossorigin>
+						<source src="audio/intro.mp4" type="audio/mpeg">
+					</audio>
+				</div>
+
 				<h1>Welkom op ALT-STRP.</h1> 
 				
 				Een digitale excursie met gecureerde projecten die inspelen op mens, technologie en natuur.
-				Neem de tijd om alle projecten rustig te bekijken en de bijbehorden artikelen te lezen. Bespreek met elkaar in de chat de projecten die jullie zien. 
+				Neem de tijd om alle projecten rustig te bekijken en de bijbehorende artikelen te lezen. Bespreek met elkaar in de chat de projecten die jullie zien. 
 				Laat in Miro weten wat jullie hebben ontdekt over de projecten. Welke technieken gebuiken ze, wat zijn de thema's, hoe ervaar jij het en wat vind jij er van?!?
 				Veel plezier en geniet ervan!
-				
+
 			</header>
 			<article>
 				<header>
@@ -33,6 +41,12 @@
 
 				<div class="video-wrapper">
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/GlhV-OKHecI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+
+				<div class="ready-player-2 player">
+					<audio crossorigin>
+						<source src="audio/terminal-slam.mp4" type="audio/mpeg">
+					</audio>
 				</div>
 
 				<p>
@@ -66,9 +80,12 @@
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/A6bo_mIOto0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 
-				<h3>
+				<div class="ready-player-3 player">
+					<audio crossorigin>
+						<source src="audio/stylegan2.mp4" type="audio/mpeg">
+					</audio>
+				</div>
 
-				</h3>
 				<p>
 					Zoals je kan zien in de video worden er gezichten <em>gemapped</em> op de muziek door een machine learning algoritme. 
 					De muziek krijgt daarmee letterlijk een gezicht. Wat vind jij van de uitwerking? 
@@ -92,12 +109,15 @@
 					<iframe title="vimeo-player" src="https://player.vimeo.com/video/392951691" width="640" height="337" frameborder="0" allowfullscreen></iframe>
 				</div>
 
-				<h3>
-
-				</h3>
+				<div class="ready-player-4 player">
+					<audio crossorigin>
+						<source src="audio/passifolia.mp4" type="audio/mpeg">
+					</audio>
+				</div>
+				
 				<p>
 					Voor het luxemerk Hermès heeft Lab212 een interatieve lightscape/soundscape gemaakt. Ze hebben hierbij gewerkt met licht, geluid en projectie. 
-					De minimale look & feel van installatie vereist wel gedetailleerde technische uitwerking en planning. Door de natuurlijke geluiden vervagen ook de grenzen van artificeel en natuurlijk.
+					De minimale look & feel van de installatie vereist wel gedetailleerde technische uitwerking en planning. Door de natuurlijke geluiden vervagen ook de grenzen van artificeel en natuurlijk.
 					Er wordt duidelijk gespeeld met het contrast van de leegheid van de ruimte en de rijkheid van de flora en fauna. 
 					In de uitwerking worden verschillende systemen aan elkaar gekoppeld, er wordt gebruik gemaakt van Rapsberry Pi's, maar ook van Ableton Live, lichten, projectie en nog veel meer.
 					Een flinke diversiteit aan technologie die toch met elkaar moeten samenwerken om de installatie tot leven te laten brengen.
@@ -124,9 +144,12 @@
 					<iframe src="https://player.vimeo.com/video/189275608" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 				</div>
 
-				<h3>
+				<div class="ready-player-5 player">
+					<audio crossorigin>
+						<source src="audio/unlimited-stadium.mp4" type="audio/mpeg">
+					</audio>
+				</div>
 
-				</h3>
 				<p>
 					Tijdens de presentatie van een nieuwe schoen in 2017 opende Nike een experimenteel trainingscentrum voor hardlopers in de open lucht. 
 					Dit hardloopbaan van 200 meter is 1 groot LED-scherm waarmee hardlopers ‘tegen zichzelf’ kunnen rennen. 
@@ -156,9 +179,12 @@
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/EkvazIZx-F0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 
-				<h3>
+				<div class="ready-player-6 player">
+					<audio crossorigin>
+						<source src="audio/rain-room.mp4" type="audio/mpeg">
+					</audio>
+				</div>
 
-				</h3>
 				<p>
 					Gerealiseerd in de Barbican in Londen, een kunstinstallatie waarbij er virtuele regen naar beneden valt die de bezoeker volgt.
 					Je wordt echter niet nat! Dit doen ze door de gebruiker te volgen met camera's en het
@@ -421,6 +447,28 @@
 
 			}
 
+		</script>
+		<script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				GreenAudioPlayer.init({
+					selector: '.player',
+					stopOthersOnPlay: true
+				});
+	
+				GreenAudioPlayer.init({
+					selector: '.player-with-download',
+					stopOthersOnPlay: true,
+					showDownloadButton: true,
+					enableKeystrokes: true
+				});
+	
+				GreenAudioPlayer.init({
+					selector: '.player-with-accessibility',
+					stopOthersOnPlay: true,
+					enableKeystrokes: true
+				});
+			});
 		</script>
 
 	</body>
