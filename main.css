@@ -37,12 +37,12 @@ main{
     
 }
 
-header.main{  
+header.main, footer.main{  
     margin-top:40vw;
     width:100%;
 }
 
-header.main, article{
+header.main, article, footer.main{
     padding: var(--main-padding);
     background: var(--main-bg-color);
 }
